@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router'
 import { ProtectedRoute } from './components/ProtectedRoute'
 import { AppLayout } from './layouts/AppLayout'
 import { DashboardPage } from './pages/DashboardPage'
+import { ExpensesPage } from './pages/ExpensesPage'
 import { HomePage } from './pages/HomePage'
 import { IncomePage } from './pages/IncomePage'
 import { LoginPage } from './pages/LoginPage'
@@ -29,6 +30,16 @@ function App() {
           <ProtectedRoute>
             <AppLayout>
               <IncomePage />
+            </AppLayout>
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/expenses"
+        element={
+          <ProtectedRoute>
+            <AppLayout>
+              <ExpensesPage />
             </AppLayout>
           </ProtectedRoute>
         }
