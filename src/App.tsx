@@ -1,4 +1,5 @@
 import { Route, Routes } from 'react-router'
+import { ProtectedRoute } from './components/ProtectedRoute'
 import { AppLayout } from './layouts/AppLayout'
 import { DashboardPage } from './pages/DashboardPage'
 import { HomePage } from './pages/HomePage'
@@ -14,9 +15,11 @@ function App() {
       <Route
         path="/dashboard"
         element={
-          <AppLayout>
-            <DashboardPage />
-          </AppLayout>
+          <ProtectedRoute>
+            <AppLayout>
+              <DashboardPage />
+            </AppLayout>
+          </ProtectedRoute>
         }
       />
     </Routes>

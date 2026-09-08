@@ -75,3 +75,20 @@ create policy "Categories are viewable by everyone"
 
 -- profiles/income/expenses: RLS is already ON (project-level setting)
 -- with ZERO policies -- fully locked until Phase 7 adds ownership rules.
+
+-- Phase 6: automatically create a profile row when a new user signs up
+create function public.handle_new_user()
+returns trigger
+language plpgsql
+security definer set search_path = public
+as $$
+begin
+  insert into public.profiles (id)
+  values (new.id);
+  return new;
+end;
+$$;
+
+create trigger on_auth_user_created
+  after insert on auth.users
+  for each row execute function public.handle_new_user();
