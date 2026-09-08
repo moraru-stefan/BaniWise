@@ -92,3 +92,55 @@ $$;
 create trigger on_auth_user_created
   after insert on auth.users
   for each row execute function public.handle_new_user();
+
+-- Phase 7: row level security ownership policies
+
+alter table public.profiles enable row level security;
+alter table public.income enable row level security;
+alter table public.expenses enable row level security;
+
+-- profiles: users can view and edit only their own profile row
+create policy "Users can view their own profile"
+  on public.profiles for select
+  using (id = auth.uid());
+
+create policy "Users can update their own profile"
+  on public.profiles for update
+  using (id = auth.uid())
+  with check (id = auth.uid());
+
+-- income: users can fully manage only their own rows
+create policy "Users can view their own income"
+  on public.income for select
+  using (user_id = auth.uid());
+
+create policy "Users can insert their own income"
+  on public.income for insert
+  with check (user_id = auth.uid());
+
+create policy "Users can update their own income"
+  on public.income for update
+  using (user_id = auth.uid())
+  with check (user_id = auth.uid());
+
+create policy "Users can delete their own income"
+  on public.income for delete
+  using (user_id = auth.uid());
+
+-- expenses: same ownership pattern as income
+create policy "Users can view their own expenses"
+  on public.expenses for select
+  using (user_id = auth.uid());
+
+create policy "Users can insert their own expenses"
+  on public.expenses for insert
+  with check (user_id = auth.uid());
+
+create policy "Users can update their own expenses"
+  on public.expenses for update
+  using (user_id = auth.uid())
+  with check (user_id = auth.uid());
+
+create policy "Users can delete their own expenses"
+  on public.expenses for delete
+  using (user_id = auth.uid());
