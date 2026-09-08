@@ -28,6 +28,9 @@ export function AppLayout({ children }: AppLayoutProps) {
             <Link to="/dashboard" className="text-sm font-medium text-slate-600 hover:text-slate-900">
               Dashboard
             </Link>
+            <Link to="/income" className="text-sm font-medium text-slate-600 hover:text-slate-900">
+              Income
+            </Link>
             {user && (
               <div className="flex items-center gap-3">
                 <span className="hidden text-sm text-slate-500 sm:inline">{user.email}</span>

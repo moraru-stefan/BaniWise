@@ -3,6 +3,7 @@ import { ProtectedRoute } from './components/ProtectedRoute'
 import { AppLayout } from './layouts/AppLayout'
 import { DashboardPage } from './pages/DashboardPage'
 import { HomePage } from './pages/HomePage'
+import { IncomePage } from './pages/IncomePage'
 import { LoginPage } from './pages/LoginPage'
 import { RegisterPage } from './pages/RegisterPage'
 
@@ -18,6 +19,16 @@ function App() {
           <ProtectedRoute>
             <AppLayout>
               <DashboardPage />
+            </AppLayout>
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/income"
+        element={
+          <ProtectedRoute>
+            <AppLayout>
+              <IncomePage />
             </AppLayout>
           </ProtectedRoute>
         }
