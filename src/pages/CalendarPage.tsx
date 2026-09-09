@@ -103,7 +103,7 @@ export function CalendarPage() {
                   >
                     <span className="text-slate-900">{day}</span>
                     {total !== undefined && (
-                      <span className="text-[10px] text-red-600 sm:text-xs">€{total.toFixed(0)}</span>
+                      <span className="text-[10px] text-red-600 sm:text-xs">€{total.toFixed(2)}</span>
                     )}
                   </button>
                 )
