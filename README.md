@@ -4,6 +4,13 @@ A personal finance and budget planning app. Track your income and expenses,
 see how much you have left to spend, follow your savings goals, and check
 what's due on a given day — all in one place.
 
+## Screenshots
+
+| | |
+|---|---|
+| ![Dashboard](docs/screenshots/dashboard-baniwise.png) | ![Calendar](docs/screenshots/calendar-baniwise.png) |
+| ![Home page](docs/screenshots/home-baniwise.png) | ![Add expense form](docs/screenshots/form-baniwise.png) |
+
 ## What it does
 
 - **Authentication** — sign up, log in, log out with a real session
