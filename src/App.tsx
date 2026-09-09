@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router'
 import { ProtectedRoute } from './components/ProtectedRoute'
 import { AppLayout } from './layouts/AppLayout'
+import { CalendarPage } from './pages/CalendarPage'
 import { DashboardPage } from './pages/DashboardPage'
 import { ExpensesPage } from './pages/ExpensesPage'
 import { HomePage } from './pages/HomePage'
@@ -40,6 +41,16 @@ function App() {
           <ProtectedRoute>
             <AppLayout>
               <ExpensesPage />
+            </AppLayout>
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/calendar"
+        element={
+          <ProtectedRoute>
+            <AppLayout>
+              <CalendarPage />
             </AppLayout>
           </ProtectedRoute>
         }

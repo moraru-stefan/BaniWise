@@ -42,7 +42,7 @@ export function ExpensesPage() {
 
   return (
     <div className="flex flex-col gap-6">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <h1 className="text-xl font-semibold text-slate-900">Expenses</h1>
         {!showForm && <Button onClick={() => setShowForm(true)}>Add expense</Button>}
       </div>
@@ -76,7 +76,7 @@ export function ExpensesPage() {
 
       <div className="flex flex-col gap-3">
         {expenses.map((expense) => (
-          <Card key={expense.id} className="flex items-center justify-between">
+          <Card key={expense.id} className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <p className="font-medium text-slate-900">{expense.label}</p>
               <p className="text-sm text-slate-500">

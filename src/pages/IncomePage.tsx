@@ -35,7 +35,7 @@ export function IncomePage() {
 
   return (
     <div className="flex flex-col gap-6">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <h1 className="text-xl font-semibold text-slate-900">Income</h1>
         {!showForm && <Button onClick={() => setShowForm(true)}>Add income</Button>}
       </div>
@@ -69,7 +69,7 @@ export function IncomePage() {
 
       <div className="flex flex-col gap-3">
         {incomes.map((income) => (
-          <Card key={income.id} className="flex items-center justify-between">
+          <Card key={income.id} className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <p className="font-medium text-slate-900">{income.label}</p>
               <p className="text-sm text-slate-500">

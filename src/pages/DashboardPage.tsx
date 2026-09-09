@@ -5,6 +5,7 @@ import { useCategories } from '../hooks/useCategories'
 import { useExpenses } from '../hooks/useExpenses'
 import { useIncome } from '../hooks/useIncome'
 import { calculateBudgetSummary, getCategoryBreakdown } from '../utils/budgetCalculations'
+import { shiftMonth } from '../utils/dateHelpers'
 
 const monthNames = [
   'January',
@@ -20,13 +21,6 @@ const monthNames = [
   'November',
   'December',
 ]
-
-function shiftMonth(year: number, month: number, delta: number) {
-  const zeroBased = month - 1 + delta
-  const newYear = year + Math.floor(zeroBased / 12)
-  const newMonth = (((zeroBased % 12) + 12) % 12) + 1
-  return { year: newYear, month: newMonth }
-}
 
 export function DashboardPage() {
   const now = new Date()
@@ -55,7 +49,7 @@ export function DashboardPage() {
 
   return (
     <div className="flex flex-col gap-6">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <h1 className="text-xl font-semibold text-slate-900">
           {monthNames[view.month - 1]} {view.year}
         </h1>
