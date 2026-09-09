@@ -42,7 +42,7 @@ export function HomePage() {
   return (
     <div className="bg-white">
       <header className="border-b border-slate-100">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6">
+        <div className="container flex items-center justify-between py-4">
           <Link to="/" className="flex items-center gap-2 text-lg font-semibold text-slate-900">
             <img src="/baniwise-logo.png" alt="" className="h-8 w-8" />
             BaniWise
@@ -90,7 +90,7 @@ export function HomePage() {
         />
         <div className="absolute inset-0 hidden bg-gradient-to-r from-white via-white/85 to-white/10 sm:block" />
 
-        <div className="relative z-10 mx-auto max-w-6xl px-4 py-28 sm:px-6 sm:py-28 lg:py-36">
+        <div className="container relative z-10 py-28 sm:py-28 lg:py-36">
           <div className="max-w-lg">
             <p className="text-sm font-semibold tracking-wide text-emerald-700 uppercase">
               Personal finance, made simple
@@ -119,7 +119,7 @@ export function HomePage() {
         </div>
       </section>
 
-      <section id="features" className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+      <section id="features" className="container py-16">
         <div className="grid gap-10 sm:grid-cols-3">
           <FeatureCard
             icon={<BarChartIcon />}
@@ -142,7 +142,7 @@ export function HomePage() {
       <section className="relative overflow-hidden">
         <img src="/bg-baniwise.jpg" alt="" className="absolute inset-0 h-full w-full object-cover" />
 
-        <div className="relative z-10 mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:items-center">
+        <div className="container relative z-10 grid gap-10 py-16 lg:grid-cols-2 lg:items-center">
           <div>
             <h2 className="text-2xl font-semibold text-slate-900">
               More clarity today. More freedom tomorrow.
@@ -182,7 +182,7 @@ export function HomePage() {
       </section>
 
       <footer className="border-t border-slate-100">
-        <div className="mx-auto flex max-w-6xl flex-col items-center gap-2 px-4 py-8 text-sm text-slate-500 sm:px-6">
+        <div className="container flex flex-col items-center gap-2 py-8 text-sm text-slate-500">
           <div className="flex items-center gap-2 text-slate-900">
             <img src="/baniwise-logo.png" alt="" className="h-5 w-5" />
             <span className="font-semibold">BaniWise</span>
