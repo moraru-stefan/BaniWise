@@ -4,6 +4,8 @@ A personal finance and budget planning app. Track your income and expenses,
 see how much you have left to spend, follow your savings goals, and check
 what's due on a given day — all in one place.
 
+**Live:** [bani-wise.vercel.app](https://bani-wise.vercel.app)
+
 ## Screenshots
 
 | | |
