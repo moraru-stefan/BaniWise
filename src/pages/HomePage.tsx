@@ -141,6 +141,7 @@ export function HomePage() {
 
       <section className="relative overflow-hidden">
         <img src="/bg-baniwise.jpg" alt="" className="absolute inset-0 h-full w-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/85 to-white/10" />
 
         <div className="container relative z-10 grid gap-10 py-16 lg:grid-cols-2 lg:items-center">
           <div>
