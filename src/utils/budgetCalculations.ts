@@ -72,3 +72,26 @@ export function calculateBudgetSummary(
 
   return { income, expenses: expensesTotal, remaining, dailyAllowance }
 }
+
+export interface CategoryBreakdownItem {
+  categoryId: string
+  amount: number
+}
+
+export function getCategoryBreakdown(
+  expenses: (RecurringAmount & { category_id: string })[],
+  year: number,
+  month: number,
+): CategoryBreakdownItem[] {
+  const totals = new Map<string, number>()
+
+  for (const expense of expenses) {
+    const contribution = getMonthlyContribution(expense, year, month)
+    if (contribution === 0) continue
+    totals.set(expense.category_id, (totals.get(expense.category_id) ?? 0) + contribution)
+  }
+
+  return Array.from(totals.entries())
+    .map(([categoryId, amount]) => ({ categoryId, amount }))
+    .sort((a, b) => b.amount - a.amount)
+}
