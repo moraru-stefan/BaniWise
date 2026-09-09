@@ -28,7 +28,7 @@ export function HomePage() {
         </div>
       </header>
 
-      <section className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-white sm:block sm:min-h-0">
+      <section className="relative overflow-hidden bg-white">
         <img src="/hero-mobile.jpg" alt="" className="absolute inset-0 h-full w-full object-cover sm:hidden" />
         <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-white/10 to-white/40 sm:hidden" />
 
@@ -39,19 +39,19 @@ export function HomePage() {
         />
         <div className="absolute inset-0 hidden bg-gradient-to-r from-white via-white/85 to-white/10 sm:block" />
 
-        <div className="relative z-10 mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-28 lg:py-36">
+        <div className="relative z-10 mx-auto max-w-6xl px-4 py-28 sm:px-6 sm:py-28 lg:py-36">
           <div className="max-w-lg">
             <p className="text-sm font-semibold tracking-wide text-emerald-700 uppercase">
               Personal finance, made simple
             </p>
-            <h1 className="mt-8 text-4xl font-bold text-slate-900 sm:mt-3 sm:text-5xl">
+            <h1 className="mt-4 text-4xl font-bold text-slate-900 sm:text-5xl">
               Plan today for a <span className="text-emerald-600">brighter</span> tomorrow
             </h1>
-            <p className="mt-10 text-slate-600 sm:mt-4">
+            <p className="mt-4 text-slate-600">
               BaniWise helps you track income and expenses, follow your budget, and reach your
               savings goals — all in one simple, private place.
             </p>
-            <div className="mt-12 flex flex-wrap gap-4 sm:mt-6 sm:gap-3">
+            <div className="mt-6 flex flex-wrap gap-3">
               <Link to="/register">
                 <Button variant="accent">Get started</Button>
               </Link>
@@ -59,7 +59,7 @@ export function HomePage() {
                 <Button variant="secondary">See features</Button>
               </a>
             </div>
-            <p className="mt-10 text-sm text-slate-500 sm:mt-3">Free to use — no credit card, ever.</p>
+            <p className="mt-4 text-sm text-slate-500">Free to use — no credit card, ever.</p>
           </div>
         </div>
       </section>
