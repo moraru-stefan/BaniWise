@@ -15,6 +15,7 @@ const navLinks = [
   { to: '/expenses', label: 'Expenses' },
   { to: '/calendar', label: 'Calendar' },
   { to: '/goals', label: 'Goals' },
+  { to: '/converter', label: 'Converter' },
 ]
 
 export function AppLayout({ children }: AppLayoutProps) {

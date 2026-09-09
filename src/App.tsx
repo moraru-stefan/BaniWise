@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router'
 import { ProtectedRoute } from './components/ProtectedRoute'
 import { AppLayout } from './layouts/AppLayout'
 import { CalendarPage } from './pages/CalendarPage'
+import { CurrencyConverterPage } from './pages/CurrencyConverterPage'
 import { DashboardPage } from './pages/DashboardPage'
 import { ExpensesPage } from './pages/ExpensesPage'
 import { HomePage } from './pages/HomePage'
@@ -62,6 +63,16 @@ function App() {
           <ProtectedRoute>
             <AppLayout>
               <SavingsGoalsPage />
+            </AppLayout>
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/converter"
+        element={
+          <ProtectedRoute>
+            <AppLayout>
+              <CurrencyConverterPage />
             </AppLayout>
           </ProtectedRoute>
         }
