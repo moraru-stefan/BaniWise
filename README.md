@@ -4,12 +4,6 @@ A personal finance and budget planning app. Track your income and expenses,
 see how much you have left to spend, follow your savings goals, and check
 what's due on a given day — all in one place.
 
-This is a learning/portfolio project. I built it to get better at modern
-React, TypeScript and Supabase, and to have something real (not a tutorial
-clone) to show and talk about in interviews.
-
-**Live demo:** coming soon (deployment is the next step)
-
 ## What it does
 
 - **Authentication** — sign up, log in, log out with a real session
@@ -73,13 +67,3 @@ src/
   utils/        pure calculation functions (budget, calendar, savings)
   types/        shared TypeScript types
 ```
-
-## A few honest notes
-
-- Expense categories are a fixed list for now, not user-created —
-  simpler for a first version, and a reasonable future improvement.
-- The currency converter is a separate tool, not wired into the actual
-  income/expense numbers — it solves a real (occasional) problem without
-  reworking the whole app for a currency I mostly don't use day to day.
-- This project is still a work in progress — automated tests and a full
-  accessibility pass are on the list, not done yet.
