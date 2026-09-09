@@ -7,16 +7,12 @@ import { DashboardPage } from './pages/DashboardPage'
 import { ExpensesPage } from './pages/ExpensesPage'
 import { HomePage } from './pages/HomePage'
 import { IncomePage } from './pages/IncomePage'
-import { LoginPage } from './pages/LoginPage'
-import { RegisterPage } from './pages/RegisterPage'
 import { SavingsGoalsPage } from './pages/SavingsGoalsPage'
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
-      <Route path="/login" element={<LoginPage />} />
-      <Route path="/register" element={<RegisterPage />} />
       <Route
         path="/dashboard"
         element={

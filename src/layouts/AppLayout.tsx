@@ -32,7 +32,7 @@ export function AppLayout({ children }: AppLayoutProps) {
     <div className="min-h-screen bg-slate-50">
       <header className="relative border-b border-slate-200 bg-white">
         <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-4 sm:px-6">
-          <Link to="/dashboard" className="flex items-center gap-2 text-lg font-semibold text-slate-900">
+          <Link to="/" className="flex items-center gap-2 text-lg font-semibold text-slate-900">
             <img src="/baniwise-logo.png" alt="" className="h-8 w-8" />
             BaniWise
           </Link>

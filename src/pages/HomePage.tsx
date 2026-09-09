@@ -1,8 +1,44 @@
 import type { ReactNode } from 'react'
-import { Link } from 'react-router'
+import { useState } from 'react'
+import { Link, useNavigate, useSearchParams } from 'react-router'
+import { AuthModal } from '../components/AuthModal'
 import { Button } from '../components/Button'
+import { useAuth } from '../hooks/useAuth'
+import { supabase } from '../lib/supabaseClient'
+
+type AuthMode = 'login' | 'register'
 
 export function HomePage() {
+  const { user } = useAuth()
+  const navigate = useNavigate()
+  const [searchParams, setSearchParams] = useSearchParams()
+
+  const authParam = searchParams.get('auth')
+  const [authModal, setAuthModal] = useState<AuthMode | null>(
+    authParam === 'login' || authParam === 'register' ? authParam : null,
+  )
+
+  function openAuthModal(mode: AuthMode) {
+    setAuthModal(mode)
+  }
+
+  function closeAuthModal() {
+    setAuthModal(null)
+    if (authParam) {
+      searchParams.delete('auth')
+      setSearchParams(searchParams, { replace: true })
+    }
+  }
+
+  function handleAuthSuccess() {
+    setAuthModal(null)
+    navigate('/dashboard')
+  }
+
+  async function handleLogout() {
+    await supabase.auth.signOut()
+  }
+
   return (
     <div className="bg-white">
       <header className="border-b border-slate-100">
@@ -18,12 +54,27 @@ export function HomePage() {
             >
               Features
             </a>
-            <Link to="/login" className="text-sm font-medium text-slate-600 hover:text-slate-900">
-              Log in
-            </Link>
-            <Link to="/register">
-              <Button>Get started</Button>
-            </Link>
+            {user ? (
+              <>
+                <Link to="/dashboard" className="text-sm font-medium text-slate-600 hover:text-slate-900">
+                  Dashboard
+                </Link>
+                <Button variant="secondary" onClick={handleLogout}>
+                  Log out
+                </Button>
+              </>
+            ) : (
+              <>
+                <button
+                  type="button"
+                  onClick={() => openAuthModal('login')}
+                  className="cursor-pointer text-sm font-medium text-slate-600 hover:text-slate-900"
+                >
+                  Log in
+                </button>
+                <Button onClick={() => openAuthModal('register')}>Get started</Button>
+              </>
+            )}
           </div>
         </div>
       </header>
@@ -52,9 +103,13 @@ export function HomePage() {
               savings goals — all in one simple, private place.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
-              <Link to="/register">
-                <Button>Get started</Button>
-              </Link>
+              {user ? (
+                <Link to="/dashboard">
+                  <Button>Go to dashboard</Button>
+                </Link>
+              ) : (
+                <Button onClick={() => openAuthModal('register')}>Get started</Button>
+              )}
               <a href="#features">
                 <Button variant="secondary">See features</Button>
               </a>
@@ -95,9 +150,15 @@ export function HomePage() {
             <p className="mt-3 max-w-md text-base text-slate-600">
               BaniWise gives you a clear picture of your money, so you can make better decisions.
             </p>
-            <Link to="/register" className="mt-6 inline-block">
-              <Button>Get started</Button>
-            </Link>
+            {user ? (
+              <Link to="/dashboard" className="mt-6 inline-block">
+                <Button>Go to dashboard</Button>
+              </Link>
+            ) : (
+              <Button className="mt-6" onClick={() => openAuthModal('register')}>
+                Get started
+              </Button>
+            )}
           </div>
 
           <div className="flex flex-col gap-5">
@@ -129,6 +190,10 @@ export function HomePage() {
           <p>© 2026 BaniWise. All rights reserved.</p>
         </div>
       </footer>
+
+      {authModal && (
+        <AuthModal initialMode={authModal} onClose={closeAuthModal} onSuccess={handleAuthSuccess} />
+      )}
     </div>
   )
 }
