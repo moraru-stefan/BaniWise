@@ -8,6 +8,7 @@ import { HomePage } from './pages/HomePage'
 import { IncomePage } from './pages/IncomePage'
 import { LoginPage } from './pages/LoginPage'
 import { RegisterPage } from './pages/RegisterPage'
+import { SavingsGoalsPage } from './pages/SavingsGoalsPage'
 
 function App() {
   return (
@@ -51,6 +52,16 @@ function App() {
           <ProtectedRoute>
             <AppLayout>
               <CalendarPage />
+            </AppLayout>
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/goals"
+        element={
+          <ProtectedRoute>
+            <AppLayout>
+              <SavingsGoalsPage />
             </AppLayout>
           </ProtectedRoute>
         }
