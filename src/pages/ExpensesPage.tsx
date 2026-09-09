@@ -43,20 +43,20 @@ export function ExpensesPage() {
   return (
     <div className="flex flex-col gap-6">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <h1 className="text-xl font-semibold text-slate-900">Expenses</h1>
+        <h1 className="text-2xl font-semibold text-slate-900">Expenses</h1>
         {!showForm && <Button onClick={() => setShowForm(true)}>Add expense</Button>}
       </div>
 
       {showForm && (
         <Card>
-          <h2 className="mb-4 text-lg font-medium text-slate-900">New expense</h2>
+          <h2 className="mb-4 text-base font-medium text-slate-900">New expense</h2>
           <ExpenseForm onSubmit={handleCreate} onCancel={() => setShowForm(false)} />
         </Card>
       )}
 
       {editingExpense && (
         <Card>
-          <h2 className="mb-4 text-lg font-medium text-slate-900">Edit expense</h2>
+          <h2 className="mb-4 text-base font-medium text-slate-900">Edit expense</h2>
           <ExpenseForm
             initialValues={editingExpense}
             onSubmit={handleUpdate}

@@ -58,7 +58,7 @@ export function ExpenseForm({ initialValues, onSubmit, onCancel }: ExpenseFormPr
           required
           value={label}
           onChange={(e) => setLabel(e.target.value)}
-          className="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-indigo-500 focus:outline-none"
+          className="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-emerald-500 focus:outline-none"
         />
       </div>
 
@@ -74,7 +74,7 @@ export function ExpenseForm({ initialValues, onSubmit, onCancel }: ExpenseFormPr
           required
           value={amount}
           onChange={(e) => setAmount(e.target.value)}
-          className="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-indigo-500 focus:outline-none"
+          className="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-emerald-500 focus:outline-none"
         />
       </div>
 
@@ -88,7 +88,7 @@ export function ExpenseForm({ initialValues, onSubmit, onCancel }: ExpenseFormPr
           value={categoryId}
           onChange={(e) => setCategoryId(e.target.value)}
           disabled={categoriesLoading}
-          className="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-indigo-500 focus:outline-none"
+          className="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-emerald-500 focus:outline-none"
         >
           <option value="" disabled>
             {categoriesLoading ? 'Loading...' : 'Select a category'}
@@ -109,7 +109,7 @@ export function ExpenseForm({ initialValues, onSubmit, onCancel }: ExpenseFormPr
           id="frequency"
           value={frequency}
           onChange={(e) => setFrequency(e.target.value as RecurrenceFrequency)}
-          className="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-indigo-500 focus:outline-none"
+          className="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-emerald-500 focus:outline-none"
         >
           {Object.entries(frequencyLabels).map(([value, text]) => (
             <option key={value} value={value}>
@@ -129,7 +129,7 @@ export function ExpenseForm({ initialValues, onSubmit, onCancel }: ExpenseFormPr
           required
           value={startDate}
           onChange={(e) => setStartDate(e.target.value)}
-          className="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-indigo-500 focus:outline-none"
+          className="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-emerald-500 focus:outline-none"
         />
       </div>
 
@@ -143,7 +143,7 @@ export function ExpenseForm({ initialValues, onSubmit, onCancel }: ExpenseFormPr
             type="date"
             value={endDate ?? ''}
             onChange={(e) => setEndDate(e.target.value)}
-            className="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-indigo-500 focus:outline-none"
+            className="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-emerald-500 focus:outline-none"
           />
         </div>
       )}
@@ -157,7 +157,7 @@ export function ExpenseForm({ initialValues, onSubmit, onCancel }: ExpenseFormPr
           rows={2}
           value={notes ?? ''}
           onChange={(e) => setNotes(e.target.value)}
-          className="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-indigo-500 focus:outline-none"
+          className="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-emerald-500 focus:outline-none"
         />
       </div>
 

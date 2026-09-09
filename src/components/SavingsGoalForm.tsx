@@ -44,7 +44,7 @@ export function SavingsGoalForm({ initialValues, onSubmit, onCancel }: SavingsGo
           required
           value={name}
           onChange={(e) => setName(e.target.value)}
-          className="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-indigo-500 focus:outline-none"
+          className="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-emerald-500 focus:outline-none"
         />
       </div>
 
@@ -60,7 +60,7 @@ export function SavingsGoalForm({ initialValues, onSubmit, onCancel }: SavingsGo
           required
           value={targetAmount}
           onChange={(e) => setTargetAmount(e.target.value)}
-          className="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-indigo-500 focus:outline-none"
+          className="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-emerald-500 focus:outline-none"
         />
       </div>
 
@@ -76,7 +76,7 @@ export function SavingsGoalForm({ initialValues, onSubmit, onCancel }: SavingsGo
           required
           value={currentAmount}
           onChange={(e) => setCurrentAmount(e.target.value)}
-          className="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-indigo-500 focus:outline-none"
+          className="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-emerald-500 focus:outline-none"
         />
       </div>
 
@@ -91,7 +91,7 @@ export function SavingsGoalForm({ initialValues, onSubmit, onCancel }: SavingsGo
           min="0"
           value={monthlyContribution}
           onChange={(e) => setMonthlyContribution(e.target.value)}
-          className="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-indigo-500 focus:outline-none"
+          className="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-emerald-500 focus:outline-none"
         />
       </div>
 

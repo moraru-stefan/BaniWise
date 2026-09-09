@@ -32,7 +32,7 @@ export function CurrencyConverterPage() {
 
   return (
     <div className="flex flex-col gap-6">
-      <h1 className="text-xl font-semibold text-slate-900">Currency Converter</h1>
+      <h1 className="text-2xl font-semibold text-slate-900">Currency Converter</h1>
 
       <Card className="max-w-md">
         {currenciesError && (
@@ -52,7 +52,7 @@ export function CurrencyConverterPage() {
               required
               value={amount}
               onChange={(e) => setAmount(e.target.value)}
-              className="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-indigo-500 focus:outline-none"
+              className="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-emerald-500 focus:outline-none"
             />
           </div>
 
@@ -66,7 +66,7 @@ export function CurrencyConverterPage() {
                 value={from}
                 onChange={(e) => setFrom(e.target.value)}
                 disabled={currenciesLoading}
-                className="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-indigo-500 focus:outline-none"
+                className="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-emerald-500 focus:outline-none"
               >
                 {currencies.map((currency) => (
                   <option key={currency.iso_code} value={currency.iso_code}>
@@ -87,7 +87,7 @@ export function CurrencyConverterPage() {
                 value={to}
                 onChange={(e) => setTo(e.target.value)}
                 disabled={currenciesLoading}
-                className="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-indigo-500 focus:outline-none"
+                className="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-emerald-500 focus:outline-none"
               >
                 {currencies.map((currency) => (
                   <option key={currency.iso_code} value={currency.iso_code}>
@@ -106,7 +106,7 @@ export function CurrencyConverterPage() {
         </form>
 
         {result !== null && (
-          <p className="mt-4 border-t border-slate-200 pt-4 text-lg font-medium text-slate-900">
+          <p className="mt-4 border-t border-slate-200 pt-4 text-base font-medium text-slate-900">
             {amount} {from} = {result.toFixed(2)} {to}
           </p>
         )}

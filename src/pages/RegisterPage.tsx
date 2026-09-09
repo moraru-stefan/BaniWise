@@ -31,7 +31,7 @@ export function RegisterPage() {
   return (
     <main className="flex min-h-screen items-center justify-center bg-slate-50 px-4">
       <Card className="w-full max-w-sm">
-        <h1 className="text-xl font-semibold text-slate-900">Create your account</h1>
+        <h1 className="text-2xl font-semibold text-slate-900">Create your account</h1>
 
         <form onSubmit={handleSubmit} className="mt-4 flex flex-col gap-4">
           <div>
@@ -44,7 +44,7 @@ export function RegisterPage() {
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-indigo-500 focus:outline-none"
+              className="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-emerald-500 focus:outline-none"
             />
           </div>
 
@@ -59,7 +59,7 @@ export function RegisterPage() {
               minLength={6}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-indigo-500 focus:outline-none"
+              className="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-emerald-500 focus:outline-none"
             />
           </div>
 

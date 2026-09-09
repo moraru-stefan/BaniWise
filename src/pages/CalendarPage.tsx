@@ -61,7 +61,7 @@ export function CalendarPage() {
   return (
     <div className="flex flex-col gap-6">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <h1 className="text-xl font-semibold text-slate-900">
+        <h1 className="text-2xl font-semibold text-slate-900">
           {monthNames[view.month - 1]} {view.year}
         </h1>
         <div className="flex gap-2">
@@ -98,7 +98,7 @@ export function CalendarPage() {
                     type="button"
                     onClick={() => setSelectedDay(day)}
                     className={`flex h-12 cursor-pointer flex-col items-center justify-center rounded-md border text-xs sm:h-16 sm:text-sm ${
-                      isSelected ? 'border-indigo-500 bg-indigo-50' : 'border-slate-200 hover:bg-slate-50'
+                      isSelected ? 'border-emerald-500 bg-emerald-50' : 'border-slate-200 hover:bg-slate-50'
                     }`}
                   >
                     <span className="text-slate-900">{day}</span>
@@ -113,7 +113,7 @@ export function CalendarPage() {
 
           {selectedDay && (
             <Card>
-              <h2 className="mb-4 text-lg font-medium text-slate-900">
+              <h2 className="mb-4 text-base font-medium text-slate-900">
                 {monthNames[view.month - 1]} {selectedDay}, {view.year}
               </h2>
               {selectedExpenses.length === 0 ? (

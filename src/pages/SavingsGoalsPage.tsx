@@ -45,20 +45,20 @@ export function SavingsGoalsPage() {
   return (
     <div className="flex flex-col gap-6">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <h1 className="text-xl font-semibold text-slate-900">Savings Goals</h1>
+        <h1 className="text-2xl font-semibold text-slate-900">Savings Goals</h1>
         {!showForm && <Button onClick={() => setShowForm(true)}>Add goal</Button>}
       </div>
 
       {showForm && (
         <Card>
-          <h2 className="mb-4 text-lg font-medium text-slate-900">New savings goal</h2>
+          <h2 className="mb-4 text-base font-medium text-slate-900">New savings goal</h2>
           <SavingsGoalForm onSubmit={handleCreate} onCancel={() => setShowForm(false)} />
         </Card>
       )}
 
       {editingGoal && (
         <Card>
-          <h2 className="mb-4 text-lg font-medium text-slate-900">Edit savings goal</h2>
+          <h2 className="mb-4 text-base font-medium text-slate-900">Edit savings goal</h2>
           <SavingsGoalForm initialValues={editingGoal} onSubmit={handleUpdate} onCancel={() => setEditingGoal(null)} />
         </Card>
       )}

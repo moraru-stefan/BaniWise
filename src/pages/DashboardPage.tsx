@@ -50,7 +50,7 @@ export function DashboardPage() {
   return (
     <div className="flex flex-col gap-6">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <h1 className="text-xl font-semibold text-slate-900">
+        <h1 className="text-2xl font-semibold text-slate-900">
           {monthNames[view.month - 1]} {view.year}
         </h1>
         <div className="flex gap-2">
@@ -94,7 +94,7 @@ export function DashboardPage() {
           </div>
 
           <Card>
-            <h2 className="mb-4 text-lg font-medium text-slate-900">Spending by category</h2>
+            <h2 className="mb-4 text-base font-medium text-slate-900">Spending by category</h2>
             {breakdown.length === 0 ? (
               <p className="text-sm text-slate-500">No expenses this month.</p>
             ) : (

@@ -36,20 +36,20 @@ export function IncomePage() {
   return (
     <div className="flex flex-col gap-6">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <h1 className="text-xl font-semibold text-slate-900">Income</h1>
+        <h1 className="text-2xl font-semibold text-slate-900">Income</h1>
         {!showForm && <Button onClick={() => setShowForm(true)}>Add income</Button>}
       </div>
 
       {showForm && (
         <Card>
-          <h2 className="mb-4 text-lg font-medium text-slate-900">New income</h2>
+          <h2 className="mb-4 text-base font-medium text-slate-900">New income</h2>
           <IncomeForm onSubmit={handleCreate} onCancel={() => setShowForm(false)} />
         </Card>
       )}
 
       {editingIncome && (
         <Card>
-          <h2 className="mb-4 text-lg font-medium text-slate-900">Edit income</h2>
+          <h2 className="mb-4 text-base font-medium text-slate-900">Edit income</h2>
           <IncomeForm
             initialValues={editingIncome}
             onSubmit={handleUpdate}

@@ -22,7 +22,7 @@ export function HomePage() {
               Log in
             </Link>
             <Link to="/register">
-              <Button variant="accent">Get started</Button>
+              <Button>Get started</Button>
             </Link>
           </div>
         </div>
@@ -47,13 +47,13 @@ export function HomePage() {
             <h1 className="mt-4 text-4xl font-bold text-slate-900 sm:text-5xl">
               Plan today for a <span className="text-emerald-600">brighter</span> tomorrow
             </h1>
-            <p className="mt-4 text-slate-600">
+            <p className="mt-4 text-sm text-slate-600 sm:text-base">
               BaniWise helps you track income and expenses, follow your budget, and reach your
               savings goals — all in one simple, private place.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Link to="/register">
-                <Button variant="accent">Get started</Button>
+                <Button>Get started</Button>
               </Link>
               <a href="#features">
                 <Button variant="secondary">See features</Button>
@@ -89,14 +89,14 @@ export function HomePage() {
 
         <div className="relative z-10 mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:items-center">
           <div>
-            <h2 className="text-2xl font-semibold text-slate-900 sm:text-3xl">
+            <h2 className="text-2xl font-semibold text-slate-900">
               More clarity today. More freedom tomorrow.
             </h2>
-            <p className="mt-3 max-w-md text-slate-600">
+            <p className="mt-3 max-w-md text-base text-slate-600">
               BaniWise gives you a clear picture of your money, so you can make better decisions.
             </p>
             <Link to="/register" className="mt-6 inline-block">
-              <Button variant="accent">Get started</Button>
+              <Button>Get started</Button>
             </Link>
           </div>
 
@@ -139,7 +139,7 @@ function FeatureCard({ icon, title, description }: { icon: ReactNode; title: str
       <div className="flex h-12 w-12 items-center justify-center rounded-full bg-emerald-50 text-emerald-600">
         {icon}
       </div>
-      <h3 className="mt-4 font-medium text-slate-900">{title}</h3>
+      <h3 className="mt-4 text-base font-medium text-slate-900">{title}</h3>
       <p className="mt-2 text-sm text-slate-500">{description}</p>
     </div>
   )
@@ -152,7 +152,7 @@ function TrustPoint({ icon, title, description }: { icon: ReactNode; title: stri
         {icon}
       </div>
       <div>
-        <p className="font-medium text-slate-900">{title}</p>
+        <p className="text-base font-medium text-slate-900">{title}</p>
         <p className="text-sm text-slate-500">{description}</p>
       </div>
     </div>
